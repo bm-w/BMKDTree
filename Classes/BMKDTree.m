@@ -109,14 +109,14 @@ void BMKDTreeTraverse(BMKDTreeNode *node, NSUInteger depth, BMKDTreeChildType ty
     [self insertObject:object usingComparator:self.comparator];
 }
 
-- (id)findNearestObjectToObject:(id)object usingComparator:(BMKDTreeComparator)comparator scorer:(BMKDTreeScorer)scorer {
+- (id)nearestObjectToObject:(id)object usingComparator:(BMKDTreeComparator)comparator scorer:(BMKDTreeScorer)scorer {
     BMKDTreeNode target = (BMKDTreeNode){.datum = object, .left = NULL, .right =  NULL};
     BMKDTreeResult result = BMKDTreeSearchNearest(self.rootNode, 0, target, comparator, scorer);
     return result.node->datum;
 }
 
-- (id)findNearestObjectToObject:(id)object usingScorer:(BMKDTreeScorer)scorer {
-    return [self findNearestObjectToObject:object usingComparator:self.comparator scorer:scorer];
+- (id)nearestObjectToObject:(id)object usingScorer:(BMKDTreeScorer)scorer {
+    return [self nearestObjectToObject:object usingComparator:self.comparator scorer:scorer];
 }
 
 - (void)traverseUsingBlock:(BMKDTreeTraverser)block {

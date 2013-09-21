@@ -27,7 +27,7 @@ Do a nearest-neighbour search using a scorer block:
 BMKDTree *tree = // ...assumed to exist (e.g. same tree as above)
 id originObject = // ...assumed to exist at coordindates {0, 0, ..., 0}
 
-id nearestObject = [tree findNearestObjectToObject:originObject usingScorer:
+id nearestObject = [tree nearestObjectToObject:originObject usingScorer:
 ^double(NSUInteger depth, BMKDTreeChildType type, id datum, id target, BOOL *stop) {
     const double *xd = datum.coordinates, *xt = target.coordinates;
     double d0 = xd[0] - xt[0], d1 = xd[1] - xt[1], /* ... */, dn = xd[N - 1] - xt[N - 1];

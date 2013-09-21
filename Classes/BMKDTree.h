@@ -22,8 +22,8 @@ typedef NSString *(^BMKDTreeDescriber)(NSString *prefix, NSUInteger depth, BMKDT
 - (void)insertObject:(id)object usingComparator:(BMKDTreeComparator)comparator;
 - (void)insertObject:(id)object;
 
-- (id)findNearestObjectToObject:(id)object usingComparator:(BMKDTreeComparator)comparator scorer:(BMKDTreeScorer)scorer;
-- (id)findNearestObjectToObject:(id)object usingScorer:(BMKDTreeScorer)scorer;
+- (id)nearestObjectToObject:(id)object usingComparator:(BMKDTreeComparator)comparator scorer:(BMKDTreeScorer)scorer;
+- (id)nearestObjectToObject:(id)object usingScorer:(BMKDTreeScorer)scorer;
 
 - (void)traverseUsingBlock:(BMKDTreeTraverser)block;
 - (NSString *)describeUsingBlock:(BMKDTreeDescriber)block;
