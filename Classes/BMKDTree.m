@@ -1,9 +1,8 @@
 //
 //  BMKDTree.m
-//  SCServer
+//  BMKDTree
 //
-//  Created by Bastiaan van de Weerd on 3/22/13.
-//
+//  Created by Bastiaan Marinus van de Weerd on 3/22/13.
 //
 
 #import "BMKDTree.h"
