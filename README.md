@@ -7,13 +7,13 @@ An Objective-C implementation of a k-D tree with arbitrary objects, by Bastiaan 
 Initialize a tree using an array (or set) of objects and a comparator block:
 
 ~~~obj-c
-#import "BMKDTree.h"
+#import <BMKDTree/BMKDTree.h>
 
 // ...
 
 NSArray *array = // ...assumed to exist (array of `N`-dimensional datum objects)
 
-BMKDTree *tree = [BMKDtree treeWithArray:array comparator:
+BMKDTree *tree = [BMKDTree treeWithArray:array comparator:
 ^NSComparisonResult(NSUInteger depth, id datum1, id datum2) {
     const NSUInteger k = depth % N;
     const double difference = datum2.coordinates[k] - datum2.coordinates[k];
